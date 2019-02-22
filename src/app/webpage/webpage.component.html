@@ -1,0 +1,17 @@
+<ng-container *ngIf="!editorMode">
+  <div class='wrapper' [ngStyle]="getPresetStyle()">
+      <ng-container *ngFor = "let div of divs">
+        <div [id] = 'div.id' [class]="div.class" [ngStyle] = "div.style" (click)="selectDiv($event)">
+    
+        </div>
+      </ng-container>
+      
+    </div>
+</ng-container>
+<ng-container *ngIf="editorMode">
+  <div class="grid" [ngStyle]="setGrid()">
+    <div class='tile' *ngFor="let tile of fakeArray; let i=index" [id]="i">
+      
+    </div>
+  </div>
+</ng-container>
